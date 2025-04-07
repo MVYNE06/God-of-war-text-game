@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('C:/PROGRAMING/Kratos text game/images/background.jpg'); /* Absolute path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+}
+
+#game {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  text-align: center;
+}
+
+#text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  min-height: 160px;
+  white-space: pre-wrap;
+}
+
+#choices button,
+#restart {
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#choices {
+  margin-bottom: 10px;
+}
+
+#restart {
+  display: none;
+}
