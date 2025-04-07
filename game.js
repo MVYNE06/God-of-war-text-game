@@ -7,21 +7,8 @@ const choice2Btn = document.getElementById("choice2");
 const restartBtn = document.getElementById("restart");
 const bgMusic = document.getElementById("bg-music");
 
-// Set the background image dynamically
-document.body.style.backgroundImage = "url('./images/background.jpg')";
-document.body.style.backgroundSize = "cover";
-document.body.style.backgroundPosition = "center";
-document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.margin = "0";
-document.body.style.height = "100vh";
-
-// Set the audio source dynamically (ensure this path is correct)
-bgMusic.src = "./audio/background.mp3";
-
-// Set the volume for the background music
 bgMusic.volume = 0.5;
 
-// Game steps and logic
 const steps = {
   intro: {
     text: `The sky darkens with smoke. On the battlefield, Kratos, a Spartan general, stands bloodied and outnumbered.
@@ -109,12 +96,10 @@ function showStep(stepName) {
   const step = steps[stepName];
   currentStep = stepName;
 
-  // Hide all buttons initially
   choice1Btn.style.display = "none";
   choice2Btn.style.display = "none";
   restartBtn.style.display = "none";
 
-  // Show text
   typeText(step.text, () => {
     if (step.choices.length === 2) {
       choice1Btn.textContent = step.choices[0].text;
@@ -143,10 +128,11 @@ restartBtn.addEventListener("click", () => {
 });
 
 startButton.addEventListener("click", () => {
-  startScreen.style.display = "none"; // Hide the start screen
-  gameDiv.style.display = "block";    // Show the game content
-  bgMusic.play().catch((error) => {
-    console.log("Error playing audio:", error);
+  startScreen.style.display = "none";
+  gameDiv.style.display = "block";
+  bgMusic.play().catch(err => {
+    console.log("Autoplay blocked, user interaction required.");
   });
-  showStep("intro"); // Start the game
+  showStep("intro");
 });
+
