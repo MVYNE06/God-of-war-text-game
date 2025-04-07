@@ -1,3 +1,6 @@
+const startScreen = document.getElementById("start-screen");
+const startButton = document.getElementById("start-button");
+const gameDiv = document.getElementById("game");
 const textElement = document.getElementById("text");
 const choice1Btn = document.getElementById("choice1");
 const choice2Btn = document.getElementById("choice2");
@@ -5,15 +8,18 @@ const restartBtn = document.getElementById("restart");
 const bgMusic = document.getElementById("bg-music");
 
 // Set the background image dynamically
-document.body.style.backgroundImage = "url('./images/background.jpg')"; // Ensure the image file exists
+document.body.style.backgroundImage = "url('./images/background.jpg')";
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundPosition = "center";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.margin = "0";
 document.body.style.height = "100vh";
 
-// Set the audio source dynamically
-bgMusic.src = "./audio/background.mp3"; // Ensure the audio file exists
+// Set the audio source dynamically (ensure this path is correct)
+bgMusic.src = "./audio/background.mp3";
+
+// Set the volume for the background music
+bgMusic.volume = 0.5;
 
 // Game steps and logic
 const steps = {
@@ -132,19 +138,15 @@ choice2Btn.addEventListener("click", () => {
 });
 
 restartBtn.addEventListener("click", () => {
-  bgMusic.currentTime = 0; // Reset the audio to the beginning
+  bgMusic.currentTime = 0;
   showStep("intro");
 });
 
-// Set the volume for the background music
-bgMusic.volume = 0.5;
-
-// Start the game
-showStep("intro");
-
-window.addEventListener("load", () => {
-  const bgMusic = document.getElementById("bg-music");
+startButton.addEventListener("click", () => {
+  startScreen.style.display = "none"; // Hide the start screen
+  gameDiv.style.display = "block";    // Show the game content
   bgMusic.play().catch((error) => {
-    console.log("Autoplay blocked. User interaction required:", error);
+    console.log("Error playing audio:", error);
   });
+  showStep("intro"); // Start the game
 });
