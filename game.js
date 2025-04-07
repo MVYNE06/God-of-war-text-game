@@ -5,7 +5,7 @@ const restartBtn = document.getElementById("restart");
 const bgMusic = document.getElementById("bg-music");
 
 // Set the background image dynamically
-document.body.style.backgroundImage = "url('C:/PROGRAMING/Kratos text game/images/background.jpg')"; // Ensure the image file exists
+document.body.style.backgroundImage = "url('./images/background.jpg')"; // Ensure the image file exists
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundPosition = "center";
 document.body.style.backgroundRepeat = "no-repeat";
@@ -13,7 +13,7 @@ document.body.style.margin = "0";
 document.body.style.height = "100vh";
 
 // Set the audio source dynamically
-bgMusic.src = "C:/PROGRAMING/Kratos text game/audio/background.mp3"; // Ensure the audio file exists
+bgMusic.src = "./audio/background.mp3"; // Ensure the audio file exists
 
 // Game steps and logic
 const steps = {
