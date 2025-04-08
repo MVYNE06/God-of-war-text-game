@@ -60,9 +60,7 @@ Chains wrap around Kratos' arms. The Blades of Chaos burn into his skin.
 
 He rises with newfound fury.
 
-"I will have my revenge."
-
---- GAME OVER: The Ghost of Sparta is born ---`,
+--- GAME OVER: The stage has been set for the Ghost of Sparta to be born ---`,
     choices: []
   },
   refuse: {
